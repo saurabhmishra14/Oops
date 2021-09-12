@@ -1,0 +1,194 @@
+Inheritance allows classes to inherit features of other classes. Put another way, parent classes extend attributes and behaviors to child classes. Inheritance supports reusability.
+
+If basic attributes and behaviors are defined in a parent class, child classes can be created extending the functionality of the parent class, and adding additional attributes and behaviors.
+
+For example, herding dogs have the unique ability to herd animals. In other words, all herding dogs are dogs, but not all dogs are herding dogs. We represent this difference by creating a child class HerdingDog from the parent class Dog, and then add the unique herd() behavior.
+
+The benefits of inheritance are programs can create a generic parent class, and then create more specific child classes as needed. This simplifies overall programming, because instead of recreating the structure of the Dog class multiple times, child classes automatically gain access to functionalities within their parent class.
+
+In the following code snippet, child class HerdingDog inherits the method bark from the parent class Dog, and the child class adds an additional method, herd().
+
+programme
+//Parent class Dog
+class Dog{
+    //Declare protected (private) fields
+    _attendance = 0;
+
+    constructor(namee, birthday) {
+        this.name = name;
+        this.birthday = birthday;
+    }
+
+    getAge() {
+        //Getter
+        return this.calcAge();
+    }
+
+    calcAge() {
+        //calculate age using today's date and birthday
+        return this.calcAge();
+    }
+
+    bark() {
+        return console.log("Woof!");
+    }
+
+    updateAttendance() {
+        //add a day to the dog's attendance days at the petsitters
+        this._attendance++;
+    }
+}
+
+//Child class HerdingDog, inherits from parent Dog
+class HerdingDog extends Dog {
+    constructor(name, birthday) {
+        super(name);
+        super(birthday);
+    }
+
+    herd() {
+        //additional method for HerdingDog child class
+        return console.log("Stay together!")
+    }
+}
+const fluffy = new HerdingDog("Fluffy", "1/12/2019");
+fluffy.bark();
+In JavaScript, inheritance is also known as prototyping.
+
+
+
+Object	Instantiated from Class	Parent Class	Methods
+Rufus	Dog	N/A	bark()
+Maisel	Herding Dog	Dog	bark(),                herd()
+Fluffy	Herding Dog	Dog	bark(),                herd()
+
+hospital person -common propety name age 
+subclass student 
+
+1. Single Inheritance in Java
+In single inheritance, there is a single child class that inherits properties from one parent class.
+
+In the following diagram, class A is a base class that is derived from class B. It is also known as single-level inheritance.
+
+single inheritance
+
+                      A 
+                      |
+                      |
+                      B 
+                      
+
+
+2. Multilevel Inheritance in Java
+In this type of inheritance, the child or derived class inherits the features of the superclass and simultaneously this child class acts as a superclass for another derived class.
+
+In the following diagram, class A is a base class that is derived from class B, which in turn, acts as a base class for a derived class C.
+
+multilevel inheritance
+
+                        A 
+                        |
+                        |
+                        B 
+                        |
+                        |
+                        C  person -student-school
+
+
+3. Hierarchical Inheritance in Java
+ 
+
+In Hierarchical Inheritance, one class acts as a superclass (base class) for more than one subclass. More than one subclass can inherit the features of a base class.
+
+In the following diagram, class A is a base class for the derived classes B, C, and D.
+
+Hierarchial Inheritance
+
+                        A 
+            
+                    /   |
+                         |
+                         C
+                   /
+                /                            vechicle-automobile
+                                                 |
+                                                 Pulled vehicle
+                B                       
+
+
+
+
+
+4. Multiple Inheritance in Java
+In Multiple Inheritance, one child or subclass class can have more than one base class or superclass and inherit features from every parent class which it inherits.
+
+We have already discussed that Java does not support multiple inheritances with classes. We can achieve multiple inheritances only with the help of Interfaces.
+
+In the following diagram, Class C inherits from interfaces A and B.
+Cooler Heater
+  \    /
+   All whether AC
+
+5.Hybrid
+We derive a car subclass from the class Vehicle. Another class characterizes Racing. When we derive a final entity, both from the Car class and the Racing class, it will give a combined output. This derivative is Ferrari – the racing car.
+Vehicle
+  |
+  Car   Racing
+   \    /  
+    Ferrari
+
+
+
+Encalpsulation
+In normal terms Encapsulation is defined as wrapping up of data and information under a single unit. In Object Oriented Programming, 
+Encapsulation is defined as binding together the data and the functions that manipulates them.
+Encapsulation means containing all important information inside an object, and only exposing selected information to the outside world. 
+Attributes and behaviors are defined by code inside the class template.
+1.Consider a real life example of encapsulation, in a company there are different sections like the accounts section, finance section, sales section etc. The finance section handles all the financial transactions and keep records of all the data related to finance. 
+Similarly the sales section handles all the sales related activities and keep records of all the sales. Now there may arise a situation when for some reason an official from finance section needs all the data about sales in a particular month.
+In this case, he is not allowed to directly access the data of sales section. He will first have to contact some other officer in the sales section and then request him to give the particular data. This is what encapsulation is. Here the data of sales section and the employees that can manipulate them are wrapped under a single name “sales section”.
+2.Let’s use a car as a metaphor for encapsulation. The information the car shares with the outside world, using blinkers to indicate turns, are public interfaces. In contrast, the engine is hidden under the hood.
+It’s a private, internal interface. When you’re driving a car down the road, other drivers require information to make decisions, like whether you’re turning left or right. However, exposing internal, private data like the engine temperature, would just confuse other drivers.
+
+The benefits of encapsulation are summarized here:
+
+Adds security: Only public methods and attributes are accessible from the outside
+Protects against common mistakes: Only public fields & methods accessible, so developers don’t accidentally change something dangerous
+Protects IP: Code is hidden in a class, only public methods are accessible by the outside developers
+Supportable: Most code undergoes updates and improvements
+Hides complexity: No one can see what’s behind the object’s curtain!
+
+
+Data Abstraction
+
+Data abstraction is one of the most essential and important feature of object oriented programming in C++. Abstraction means displaying only essential 
+information and hiding the details. Data abstraction refers to providing only essential information about the data to the outside world, hiding the backg
+round details or implementation.
+
+Consider a real life example of a man driving a car. The man only knows that pressing the accelerators will increase the speed of car or applying brakes 
+will stop the car but he does not know about how on pressing accelerator the speed is actually increasing, he does not know about the inner mechanism of 
+the car or the implementation of accelerator, brakes etc in the car. 
+
+Advantages of Data Abstraction:
+
+Helps the user to avoid writing the low level code
+Avoids code duplication and increases reusability.
+Can change internal implementation of class independently without affecting the user.
+Helps to increase security of an application or program as only important details are provided to the user.
+
+
+Polyporphism
+
+The word polymorphism means having many forms. In simple words, we can define polymorphism as the ability of a message to be displayed in more than one form. 
+A real-life example of polymorphism, a person at the same time can have different characteristics. Like a man at the same time is a father, a husband, an employee. 
+So the same person posses different behavior in different situations. This is called polymorphism. Polymorphism is considered as one of the important features of 
+Object Oriented Programming.
+
+Consider your Mobile phone. You can save your Contacts in it. Now suppose you want to save 2 numbers for one person. 
+
+2.Suppose if you are in class room that time you behave like a student, when you are in market at that time you behave like a customer, 
+when you at your home at that time you behave like a son or daughter, Here one person present in different-different behaviors.
+You can do it by saving the second number under the same name.
+
+
+
